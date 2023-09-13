@@ -27,8 +27,9 @@ const cards = [
 
 const memoryGame = new MemoryGame(cards);
 const card = document.querySelectorAll('.card');
-
-
+const pairsList = document.querySelector('#pairs-clicked');
+//.innerText = pairsList ++
+const pairsGuessed = document.querySelector('#pairs-guessed');//.innerText = pairsGuessed ++
 
 window.addEventListener('load', (event) => {
   let html = '';
@@ -47,18 +48,21 @@ window.addEventListener('load', (event) => {
   // Bind the click event of each element to a function
   document.querySelectorAll('.card').forEach((card) => {
     card.addEventListener('click', () => {
-        card.classList.toggle('back');
+        
+          card.classList.toggle('front')
+        
       console.log(`Card clicked: ${card}`);
     });
   });
 });
 
-checkIfFinished();
+//checkIfPair
+//checkIfFinished
 
 
 //all selectors on top and then followed by the functions
 /*sequence:
-1. all cards faced down - loaded on the page already
+1. all cards faced down - loaded on the page already - DONE
 2. flipping movement - onclick
 3. if guess/same cards - onclick stay on faced up (with img)
 4. if x guessed - onclick, flip back to blue bg, faced down
